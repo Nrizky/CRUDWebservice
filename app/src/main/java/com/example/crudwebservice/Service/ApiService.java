@@ -19,6 +19,7 @@ public interface ApiService {
     @POST("/items")
     Call<PostResponse> createItems(@Field("name") String name,
                                    @Field("description") String description);
+
     @GET("/items")
     Call<GetResponse> getAllItems();
 
@@ -30,6 +31,7 @@ public interface ApiService {
     Call<JsonObject> updateDataItems(@Path("id") String id,
                                      @Field("name") String name,
                                      @Field("description") String description);
+
     @DELETE("/items/{id}")
     Call<JsonObject> deleteDataItems(@Path("id") String id);
 }

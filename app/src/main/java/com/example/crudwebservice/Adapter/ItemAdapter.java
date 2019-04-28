@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.crudwebservice.R;
 import com.example.crudwebservice.Model.getall.DataItem;
+import com.example.crudwebservice.R;
 
 import java.util.List;
 
@@ -43,9 +43,14 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.Holder> {
         return list.size();
     }
 
+    public interface OnAdapterClickListener {
+        void onClicked(String id, String name, String description, String key);
+    }
+
     public class Holder extends RecyclerView.ViewHolder {
-        private TextView tvName, tvDescription,tvId;
+        private TextView tvName, tvDescription, tvId;
         private Button btnEdit, btnDelete;
+
         public Holder(@NonNull View itemView) {
             super(itemView);
             tvId = itemView.findViewById(R.id.tv_id);
@@ -72,8 +77,5 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.Holder> {
                 }
             });
         }
-    }
-    public interface OnAdapterClickListener {
-        void onClicked(String id, String name, String description, String key);
     }
 }

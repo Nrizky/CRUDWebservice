@@ -4,36 +4,36 @@ package com.example.crudwebservice.Model.update;
 import com.google.gson.annotations.SerializedName;
 
 
-public class UpdateResponse{
+public class UpdateResponse {
 
-	@SerializedName("data")
-	private Object data;
+    @SerializedName("data")
+    private Object data;
 
-	@SerializedName("errors")
-	private String errors;
+    @SerializedName("errors")
+    private String errors;
 
-	public void setData(Object data){
-		this.data = data;
-	}
+    public Object getData() {
+        return data;
+    }
 
-	public Object getData(){
-		return data;
-	}
+    public void setData(Object data) {
+        this.data = data;
+    }
 
-	public void setErrors(String errors){
-		this.errors = errors;
-	}
+    public String getErrors() {
+        return errors;
+    }
 
-	public String getErrors(){
-		return errors;
-	}
+    public void setErrors(String errors) {
+        this.errors = errors;
+    }
 
-	@Override
- 	public String toString(){
-		return 
-			"UpdateResponse{" + 
-			"data = '" + data + '\'' + 
-			",errors = '" + errors + '\'' + 
-			"}";
-		}
+    @Override
+    public String toString() {
+        return
+                "UpdateResponse{" +
+                        "data = '" + data + '\'' +
+                        ",errors = '" + errors + '\'' +
+                        "}";
+    }
 }

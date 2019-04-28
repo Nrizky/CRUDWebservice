@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
     EditText a, b;
     Button btn, btn2;
     MainPresenter mainPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void setToast(String message) {
-        Toast.makeText(this, message , Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     @Override

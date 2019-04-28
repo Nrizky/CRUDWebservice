@@ -13,11 +13,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class BaseApp extends Application {
     public static ApiService service;
     private String url = "https://api-barang.herokuapp.com";
+
     @Override
     public void onCreate() {
         super.onCreate();
         service = getRetrofit().create(ApiService.class);
     }
+
     private Retrofit getRetrofit() {
         return new Retrofit.Builder()
                 .baseUrl(url)
@@ -25,11 +27,13 @@ public class BaseApp extends Application {
                 .client(getHttpClient())
                 .build();
     }
+
     private OkHttpClient getHttpClient() {
         return new OkHttpClient.Builder()
                 .addInterceptor(getHttpLogInterceptor())
                 .build();
     }
+
     private Interceptor getHttpLogInterceptor() {
         HttpLoggingInterceptor loggingInterceptor = new
                 HttpLoggingInterceptor();
